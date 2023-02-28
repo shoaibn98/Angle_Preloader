@@ -1,0 +1,10 @@
+### VisualStudioCode ###
+.vscode/*
+
+# Ignore all local history of files
+.history
+
+#my test file
+style.css
+test.html
+Angle_Preloader_Total.js

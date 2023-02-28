@@ -1,0 +1,28 @@
+{
+    "name": "angle-preloader",
+    "version": "1.0.0",
+    "description": "this is a Preloader Package. create Preloader for your website in 2 step. find and write 1 line code",
+    "main": "Angle_Preloader.js",
+
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/shoaibn98/Angle_Preloader.git"
+    },
+    "bugs": {
+        "url": "https://github.com/shoaibn98/Angle_Preloader/issues"
+    },
+    "keywords": [
+        "JavaScript",
+        "CSS",
+        "Animation",
+        "Preloader",
+        "HTML",
+        "preloader",
+        "website",
+        "Preloader",
+        "Angle_Preloader",
+        "angle_preloader"
+    ],
+    "author": "Ahmad Shoaib Norouzi (shoaibnorouzi98@gmail.com)",
+    "license": "ISC"
+}
