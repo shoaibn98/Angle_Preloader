@@ -52,6 +52,13 @@ class Angle_Preloader {
     setTextColor(color) {
         document.documentElement.style.setProperty("--text-color", color);
     }
+
+    setTextFontFamily(fontName) {
+        this.loadingMessage.style.fontFamily = fontName;
+    }
+    setTextFontSize(fontSize) {
+        this.loadingMessage.style.fontSize = fontSize + "px";
+    }
     setBlockColor(color) {
         document.documentElement.style.setProperty("--start-color", color);
         document.documentElement.style.setProperty("--middle-color", color);
