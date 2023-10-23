@@ -2,7 +2,7 @@ var angle_preloader_element = document.getElementById("Angle_Preloader");
 
 class Angle_Preloader {
 
-    constructor(typeOfPreloader, title) {
+    constructor(typeOfPreloader, title, domain) {
         if (!title) title = "";
         this.preloader_mode = typeOfPreloader;
         angle_preloader_element = document.getElementById("Angle_Preloader");
@@ -22,7 +22,7 @@ class Angle_Preloader {
 
         this.styleNode = document.createElement("style");
         this.styleNode.type = "text/css";
-        var insideStyle = document.createTextNode(":root{--start-color:rgba(0,0,0,1);--middle-color:rgba(0,0,0,0.7);--text-color:rgba(0,0,0,1);--diameter:50px} @keyframes angle_preloader_fadeout {from{opacity: 1;display:block;} to{opacity: 0;display:none;z-index: -1}}");
+        var insideStyle = document.createTextNode(":root{--start-color:rgba(0,0,0,1);--middle-color:rgba(0,0,0,0.7);--text-color:rgba(0,0,0,1);--diameter:50px} *{padding:0px;margin:0px;box-sizing: border-box;} @keyframes angle_preloader_fadeout {from{opacity: 1;display:block;} to{opacity: 0;display:none;z-index: -1}}");
         this.styleNode.appendChild(insideStyle);
 
         if (typeOfPreloader == "wave") this.wave();
@@ -31,9 +31,11 @@ class Angle_Preloader {
         if (typeOfPreloader == "loading_circle_2") this.loading("circle2");
         if (typeOfPreloader == "loading_circle_3") this.loading("circle3");
         if (typeOfPreloader == "loading_circle_classic") this.loading("circle_classic");
-        if (typeOfPreloader == "orbital_1") this.orbital("orbital");
+        if (typeOfPreloader == "orbital_1") this.orbital();
         if (typeOfPreloader == "orbital_2") this.orbital2();
         if (typeOfPreloader == "radio_wave") this.radioWave();
+        if (typeOfPreloader == "balls") this.balls();
+        if (typeOfPreloader == "anime_text") this.anime_text(title, domain);
 
         angle_preloader_element.appendChild(this.mainDiv);
         angle_preloader_element.appendChild(this.loadingMessage);
