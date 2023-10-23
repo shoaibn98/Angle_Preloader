@@ -94,4 +94,13 @@ class Angle_Preloader {
             }
         }
     }
+    siteColor(color) {
+        this.insideDiv1.style.color = color;
+    }
+    domainColor(color) {
+        this.insideDiv2.style.color = color;
+    }
+    dotColor(color) {
+        this.insideDiv3.style.color = color;
+    }
 }
