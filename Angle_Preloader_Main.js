@@ -1,10 +1,10 @@
-var angle_preloader_element = document.getElementById("Angle_Preloader");
+// var angle_preloader_element = document.getElementById("Angle_Preloader");
 
 class Angle_Preloader {
 
     constructor(option) {
         // get Element Id
-        angle_preloader_element = document.getElementById("Angle_Preloader");
+        this.angle_preloader_element = document.getElementById("Angle_Preloader");
 
         // set Option in Class
         this.option = option;
@@ -14,9 +14,16 @@ class Angle_Preloader {
         var window = this.getOptionValue(this.option.window, "body");
 
         // Set window mode
-        if (window == "body") angle_preloader_element.style = "width: 100%;height: 100%;background-color: #fff;position: fixed;z-index: 99;";
-        if (window == "element") angle_preloader_element.style = "width: 100%;height: 100%;background-color: #fff;z-index: 1;";
+        if (window == "body") this.angle_preloader_element.style = "width: 100%;height: 100%;background-color: #fff;position: fixed;z-index: 99;";
+        if (window == "element") {
+            var target = this.getOptionValue(this.option.target, "");
 
+            var targetElement = document.getElementById(target);
+            var el = new createElement("div", "width: 100%;height: 100%;background-color: #fff;z-index: 1;position:absolute;top:0;left:0")
+            this.angle_preloader_element = el;
+            targetElement.appendChild(el);
+
+        }
 
         // Set Default Message ___ If not set
         var message = this.getOptionValue(this.option.message, "");
@@ -48,8 +55,8 @@ class Angle_Preloader {
         if (option.type == "square") this.square(option);
 
         // Append elements to main Element
-        angle_preloader_element.appendChild(this.mainDiv);
-        angle_preloader_element.appendChild(this.loadingMessage);
+        this.angle_preloader_element.appendChild(this.mainDiv);
+        this.angle_preloader_element.appendChild(this.loadingMessage);
 
         // append style Node
         document.getElementsByTagName("head")[0].appendChild(this.styleNode);
@@ -430,7 +437,7 @@ class Angle_Preloader {
     //!  OTHER FUNCTIONS ______ => TOOLS
 
     hide() {
-        angle_preloader_element.style.animation = "angle_preloader_fadeout 1s 1 linear forwards";
+        this.angle_preloader_element.style.animation = "angle_preloader_fadeout 1s 1 linear forwards";
     }
     setText(text) {
         this.loadingMessage.innerText = text;
@@ -470,7 +477,7 @@ class Angle_Preloader {
             this.setTextColor("#fff");
             this.setFirstColor("#fff");
 
-            angle_preloader_element.style.backgroundColor = "#000";
+            this.angle_preloader_element.style.backgroundColor = "#000";
             switch (this.option.type) {
                 case "wave":
                     var spanCount = this.getOptionValue(this.option.spanCount, 6)
